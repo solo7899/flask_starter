@@ -4,15 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      button {
-        background-color: black;
-        color: white;
-      }
-      img {
-        background-color: black;
-      }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://unpkg.com/htmx.org@1.9.10"
       integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
@@ -22,11 +14,27 @@
   <body>
     <div>
       <center>
-        <h1>This is a Weather api</h1>
-        <form hx-post="/get_weather" hx-swap="outerHTML">
-          <p><input type="text" name="city_name" /></p>
-          <p><input type="submit" value="submit" /></p>
-        </form>
+        <div>
+          <h1 class="text-lg pt-5 pb-3">This is a Weather api</h1>
+          <form hx-post="/get_weather" hx-target="#post-target">
+            <p>
+              <input
+                type="text"
+                class="border-2 border-grey-400 rounded-lg"
+                name="city_name"
+                placeholder="City Name"
+              />
+            </p>
+            <p>
+              <input
+                type="submit"
+                value="submit"
+                class="border-2 m-1 px-2 rounded-lg border-red-600 mt-2 hover:bg-red-600 hover:text-white"
+              />
+            </p>
+          </form>
+        </div>
+        <div id="post-target"></div>
       </center>
     </div>
     <div id="target"></div>
