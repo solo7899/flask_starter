@@ -6,9 +6,7 @@ import os
 using weather api : https://www.weatherapi.com/
 """
 
-"""
-get api_key from web_site and put it in a .env file as key/value pairs
-"""
+# get api_key from web_site and put it in a .env file as key/value pairs
 load_dotenv("./.env")
 api_key = os.environ.get("api_key")  # or os.getenv("api_key")
 
