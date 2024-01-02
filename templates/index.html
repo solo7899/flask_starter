@@ -22,9 +22,11 @@
   <body>
     <div>
       <center>
-        <button hx-get="/clicked" hx-trigger="click delay:2s">
-          <h1>Click me!</h1>
-        </button>
+        <h1>This is a Weather api</h1>
+        <form hx-post="/get_weather" hx-swap="outerHTML">
+          <p><input type="text" name="city_name" /></p>
+          <p><input type="submit" value="submit" /></p>
+        </form>
       </center>
     </div>
     <div id="target"></div>

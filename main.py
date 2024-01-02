@@ -9,7 +9,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/get_weather", methods=["GET", "POST"])
+@app.route("/get_weather/", methods=["GET", "POST"])
 def get_weather():
     if request.method == "POST":
         city_name = request.form.get("city_name", "")
