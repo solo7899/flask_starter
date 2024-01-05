@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 from getWeather import getWeather
 
 app = Flask(__name__)
@@ -21,4 +21,4 @@ def get_weather():
             data = getWeather(longitdue=longitdue, latitude=latitude)
         return data
     else:
-        return "<h1><center>Use POST method!!</center></h1>"
+        return redirect(url_for("index"))
